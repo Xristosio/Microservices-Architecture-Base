@@ -13,8 +13,11 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
+# Define the argument
+ARG MY_VAR
+
 # Expose the port that the app will run on
-EXPOSE 3001
+EXPOSE $MY_VAR
 
 # Define the command to run the application
 CMD ["node", "index.js"]
