@@ -7,8 +7,8 @@ dotenv.config();
 
 app.get("/hello", async (req, res) => {
   try {
-    const greeting = await axios.get("http://greeting-service:3001/greeting");
-    const name = await axios.get("http://name-service:3002/name");
+    const greeting = await axios.get(process.env.API_HELLO_URL);
+    const name = await axios.get(process.env.API_WORLD_URL);
     res.json({ message: `${greeting.data.message}, ${name.data.name}!` });
   } catch (error) {
     res.status(500).json({ error: "Something went wrong!" });
