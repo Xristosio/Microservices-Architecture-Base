@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  greeting-service:
+    build:
+      context: ./greeting-service
+    ports:
+      - ${PORT_SERVICE1}:${PORT_SERVICE1}
+    env_file:
+      - ./greeting-service/.env # Load environment variables from the .env file
+  name-service:
+    build:
+      context: ./name-service
+    ports:
+      - ${PORT_SERVICE2}:${PORT_SERVICE2}
+    env_file:
+      - ./name-service/.env # Load environment variables from the .env file
+  api-gateway:
+    build:
+      context: ./api-gateway
+    ports:
+      - ${PORT_SERVICE3}:${PORT_SERVICE3}
+    depends_on:
+      - greeting-service
+      - name-service
+    env_file:
+      - ./api-gateway/.env # Load environment variables from the .env file
