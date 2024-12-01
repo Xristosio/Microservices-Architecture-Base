@@ -5,3 +5,5 @@
 - #### Nodejs implementation
 - #### Every service has dockerized
 - #### Docker-Compose secure
+
+#### ToDO: Kafka implementation
