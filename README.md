@@ -7,7 +7,12 @@
 - #### Every service has dockerized
 - #### Docker-Compose secure
 
-#### ToDO: Kafka implementation :ok
+#### ToDO: 
+- Kafka implementation :ok
+- Databases config (MongoDB, PostgreSQL)
+- Add kafka brokers
+- Implement more topics
+- Kubernetes managment
 
 - Python kafka implementation
 - JavaScript kafka implementation
