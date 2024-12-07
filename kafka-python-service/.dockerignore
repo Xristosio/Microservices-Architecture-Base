@@ -1,0 +1,17 @@
+# Ignore environment variables file (if handled externally or by env_file in docker-compose)
+
+.env
+
+# Ignore Git-related files (if you're using Git)
+
+.gitignore
+
+# Ignore Python bytecode files
+
+**pycache**
+\*.pyc
+
+# Ignore other unnecessary files (e.g., logs, editor-specific files)
+
+_.log
+_.swp
