@@ -68,4 +68,4 @@ consume_messages()
 
 # Run Flask app on localhost:3004
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=3004)
+    app.run(host='0.0.0.0', port=<test>)
