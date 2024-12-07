@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 
 services:
   greeting-service:
@@ -7,27 +7,39 @@ services:
       args:
         MY_VAR: ${PORT_SERVICE1}
     ports:
-      - ${PORT_SERVICE1}:${PORT_SERVICE1}
+      - "${PORT_SERVICE1}:${PORT_SERVICE1}"
     env_file:
-      - ./greeting-service/.env # Load environment variables from the .env file
+      - ./greeting-service/.env # Reference service-specific .env files
+
   name-service:
     build:
       context: ./name-service
       args:
         MY_VAR: ${PORT_SERVICE2}
     ports:
-      - ${PORT_SERVICE2}:${PORT_SERVICE2}
+      - "${PORT_SERVICE2}:${PORT_SERVICE2}"
     env_file:
-      - ./name-service/.env # Load environment variables from the .env file
+      - ./name-service/.env
+
   api-gateway:
     build:
       context: ./api-gateway
       args:
         MY_VAR: ${PORT_SERVICE3}
     ports:
-      - ${PORT_SERVICE3}:${PORT_SERVICE3}
+      - "${PORT_SERVICE3}:${PORT_SERVICE3}"
     depends_on:
       - greeting-service
       - name-service
     env_file:
-      - ./api-gateway/.env # Load environment variables from the .env file
+      - ./api-gateway/.env
+
+  kafka-consumer-service:
+    build:
+      context: ./kafka-js-service
+      args:
+        MY_VAR: ${PORT_SERVICE4}
+    ports:
+      - "${PORT_SERVICE4}:${PORT_SERVICE4}"
+    env_file:
+      - ./kafka-js-service/.env # Reference the .env file specific to this service
