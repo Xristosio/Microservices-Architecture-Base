@@ -2,6 +2,7 @@
 
 - #### 5 services
 - #### 3 are communicating via API
+- #### 2 are communicating via Apache Kafka
 - #### Nodejs implementation (ExpressJS)
 - #### Python implementation (Flask)
 - #### Every service has dockerized
