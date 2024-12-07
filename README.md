@@ -11,3 +11,5 @@
 
 - Python kafka implementation
 - JavaScript kafka implementation
+  
+![Concept map](https://github.com/user-attachments/assets/ae9907f4-994e-4cfa-887d-5cf34dc6dfa9)
