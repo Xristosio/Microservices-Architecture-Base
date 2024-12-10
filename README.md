@@ -12,6 +12,8 @@
 - Kafka implementation :ok
 - Python kafka implementation :ok
 - JavaScript kafka implementation :ok
+- Add async code
+- Add threading code
 - Databases config (MongoDB, PostgreSQL)
 - Add kafka brokers
 - Implement more topics
